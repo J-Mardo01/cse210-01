@@ -49,7 +49,7 @@ ___________________
 |-----------------|
 """
     for i in range(1,10):
-        if (board[i] == '0' or board[i] == 'X'):
+        if (board[i] == 'O' or board[i] == 'X'):
             blankboard = blankboard.replace(str(i), board[i])
         else:
             blankboard = blankboard.replace(str(i), ' ')
