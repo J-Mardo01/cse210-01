@@ -32,4 +32,25 @@ def main():
             board = ['#'] * 10
 
 
-            
+def display_board(board):
+    blankboard="""
+____________________
+|     |     |     |
+|  1  |  2  |  3  |            
+|     |     |     |
+|-----------------|
+|     |     |     |
+|  4  |  5  |  6  |
+|     |     |     |
+|-----------------|
+|     |     |     |
+|  7  |  8  |  9  |
+|     |     |     |
+|-----------------|
+"""
+    for i in range(1,10):
+        if (board[i] == '0' or board[i] == 'X'):
+            blankboard = blankboard.replace(str(i), board[i])
+        else:
+            blankboard = blankboard.replace(str(i), ' ')
+    print(blankboard)
