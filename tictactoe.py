@@ -69,5 +69,36 @@ def player_input():
         else:
             player1 = input("Please pick a marker: 'X' or 'O' ")
 
+def place_marker(board, marker, position):
+    board[position] = marker
+    return board
+
+def space_check(board, position):
+    return board[position] == '#'
+
+def full_board_check(board):
+    return len([x for x in board if x =='#']) == 1
+
+def win_check(board, mark):
+    if board[1] == board[2] == board[3] == mark:
+        return True
+    elif board[4] == board[5] == board[6] == mark:
+        return True
+    elif board[7] == board[8] == board[9] == mark:
+        return True
+    elif board[1] == board[4] == board[7] == mark:
+        return True
+    elif board[2] == board[5] == board[8] == mark:
+        return True
+    elif board[3] == board[6] == board[9] == mark:
+        return True
+    elif board[1] == board[5] == board[9] == mark:
+        return True
+    elif board[3] == board[5] == board[7] == mark:
+        return True
+    else:
+        return False
+
+
 
             
