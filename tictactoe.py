@@ -99,6 +99,12 @@ def win_check(board, mark):
     else:
         return False
 
+def player_choice(board):
+    choice = input("Please select an empty space between 1 and 9 : ")
+    while not space_check(board, int(choice)):
+        choice = input("This space isn't valid. Please choose a space between 1 and 9 : ")
+    return choice
+
 
 
             
