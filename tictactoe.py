@@ -105,6 +105,13 @@ def player_choice(board):
         choice = input("This space isn't valid. Please choose a space between 1 and 9 : ")
     return choice
 
+def replay():
+    playagain = input("Do you want to play again (Yes or no)? ")
+    if playagain.lower() == "yes":
+        return True
+    if playagain.lower() == "no":
+        return False
+
 
 
             
