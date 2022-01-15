@@ -5,25 +5,25 @@ def main():
     board = ['#'] * 10
    
     while True:
-        game_on = full_board_check(b)
+        game_on = full_board_check(board)
         
         while not game_on:
-            position = player_choice()
+            position = player_choice(board)
 
             if i % 2 == 0:
                 marker = players[1]
             else:
                 marker = players[0]
 
-            place_marker()
+            place_marker(board, marker, int(position))
 
-            display_board()
+            display_board(board)
 
             i += 1
-            if win_check():
+            if win_check(board, marker):
                 print('You won!')
                 break
-            game_on = full_board_check()
+            game_on = full_board_check(board)
         if not replay():
             break
         else:
@@ -34,7 +34,7 @@ def main():
 
 def display_board(board):
     blankboard="""
-____________________
+___________________
 |     |     |     |
 |  1  |  2  |  3  |            
 |     |     |     |
@@ -113,5 +113,5 @@ def replay():
         return False
 
 
-
+main()
             
